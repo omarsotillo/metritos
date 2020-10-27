@@ -12,6 +12,8 @@ Those technologies were used are adn the reasosns:
 - [Rails](https://rubyonrails.org/): As a default for ruby. Even though I am a huge fan of hanami/ hanami-API or simple racks applications, ignoring the obvious that Rails is the main development ruby framework would have being dumb.
 - [Traefik and portainer](https://doc.traefik.io/traefik/): Checked how to have a cool environment without ports and localhost (incongruencies between systems and externalizing)
 
+![Metritos app](docs/images/metritos.png)
+
 # Findings:
 
 Coming with the premise of not being a huge fan of React.js (this test changed it) because of how coupled some tools are linked to this library (react.js cannot exist without redux and many developers having this deep inside tattooed), I wanted to give it a try what new alternatives.
@@ -38,10 +40,12 @@ Directly after:
 
 `make up`
 
-Runnning commands you might run (always from the main project). Some examples
+##### Runnning commands (examples)
 
 `make run app="development" command="rake db:migrate:reset"`
+
 `make run app="development" command="bundle exec rspec||bundle_audit"`
+
 `make run app="development" command="rails c "`
 
 ### Frontend (Hive)
@@ -113,13 +117,10 @@ This project comes with a set of defined services:
 
   - Visit and create a user with the password you want in [portainer](http://portainer.localhost)
 
-  ![Portainer](docs/portainer.png)
-
 - [Traefik](https://docs.traefik.io/): act as a reverse proxy service
 
   - Define one entrypoint for our docker-environment.
   - Visit the dashboard in [traefik](http://traefik.localhost:8080)
-  - ![Traefik](docs/traefik.png)
 
 - [Mailhog](): proxy mailer
 - [fast-dev](): Kafka playground
