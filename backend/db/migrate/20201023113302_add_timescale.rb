@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+class AddTimescale < ActiveRecord::Migration[6.0]
+  def change
+    enable_extension('timescaledb') unless extensions.include? 'timescaledb'
+  end
+end

@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  development:
+    build: ./backend
+    restart: always
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8040:3000"
+    tty: true
+    stdin_open: true
+    env_file:
+      - ./docker/envs/.backend.development.local
+    depends_on:
+      - timescaledb
+    environment:
+      RAILS_LOG_TO_STDOUT: "true"
+    labels:
+      - traefik.http.routers.backend.rule=Host(`backend.localhost`)
+
+  test:
+    build: ./backend
+    command: bundle exec rspec
+    depends_on:
+      - timescaledb
+    env_file: 
+      - docker/envs/.backend.test.local
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./backend:/app

@@ -1,0 +1,67 @@
+version: '3.7'
+
+services:
+  # redis:
+  #   image: redis:5.0.6
+  #   restart: unless-stopped
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redisdata:/data
+  #   labels:
+  #     - "traefik.enable=false"
+
+  # mariadb:
+  #   image: mariadb:10.0.21
+  #   restart: unless-stopped
+  #   environment:
+  #     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mariadbdata:/var/lib/mysql
+  #   labels:
+  #     - "traefik.enable=false"
+
+  # mongo:
+  #   image: mongo:2.4
+  #   restart: unless-stopped
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongodbdata:/data/db
+  #   labels:
+  #     - "traefik.enable=false"
+
+  # postgres:
+  #   image: postgres:12-alpine
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: asecurepassword
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgresdata:/var/lib/postgresql/data
+  #   labels:
+  #     - "traefik.enable=false"
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg12
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: asecurepassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+    labels:
+      - "traefik.enable=false"
+
+volumes:
+  mariadbdata: {}
+  mongodbdata: {}
+  postgresdata: {}
+  redisdata: {}
+

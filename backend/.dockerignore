@@ -1,0 +1,17 @@
+# This file is being touched by Whale.
+# Some useful default ignores are added, but feel free to add further
+# files that should not be added to the final docker image.
+
+.bundle/
+.git/
+coverage/
+log/*
+!log/.keep
+node_modules/
+tmp/*
+tmp/pids/*
+!tmp/pids/.keep
+vendor/bundle/
+
+# Put your own ignores below this line.
+

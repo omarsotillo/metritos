@@ -1,0 +1,6 @@
+inherit_gem:
+  crean_cop:
+    - default.yml
+
+AllCops:
+  NewCops: enable

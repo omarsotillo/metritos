@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    labels:
+      - "traefik.http.routers.mailhog.rule=Host(`mailhog.localhost`)" # Divide ports
+ 
+  whoami:
+    image: containous/whoami
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
+
+  portainer:
+    image: portainer/portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`portainer.localhost`)"

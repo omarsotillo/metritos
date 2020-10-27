@@ -4,13 +4,13 @@ This project stems from a research for the state of React.js in October 2020 (Re
 
 Those technologies were used are adn the reasosns:
 
-- Stitches.js: Near-zero runtime, server-side rendering, multi-variant support, and best-in-class developer experience. Wanted to give a try vs styled_components
-- Zustand.js: Out of all of the new state management wrappers and recommended by @lorenz_weiss decided to give it a try
-- React-query: Provides a default and general wrapper around . Seems cool -> all projects end up implementing that on the long-run
-- TimescaleDB: Supercharged PostgreSQL
+- [Stitches.js](https://github.com/modulz/stitches): Near-zero runtime, server-side rendering, multi-variant support, and best-in-class developer experience. Wanted to give a try vs styled_components
+- [Zustand.js](https://zustand.surge.sh/): Out of all of the new state management wrappers and recommended by @lorenz_weiss decided to give it a try
+- [React-query](https://react-query.tanstack.com/): Provides a default and general wrapper around . Seems cool -> all projects end up implementing that on the long-run
+- [TimescaleDB](https://www.timescale.com/): Supercharged PostgreSQL
   Rely on the same PostgreSQL you know and love, with full SQL, rock-solid reliability, and a massive ecosystem. Achieve 10-100x faster queries than PostgreSQL, InfluxDB, and MongoDB. Native optimizations for time-series. Write millions of data points per second. Store 100s of terabytes or petabytes. Don’t worry about cardinality.
-- Rails: As a default for ruby. Even though I am a huge fan of hanami/ hanami-API or simple racks applications, ignoring the obvious that Rails is the main development ruby framework would have being dumb.
-- Traefik and portainer: Checked how to have a cool environment without ports and localhost (incongruencies between systems and externalizing)
+- [Rails](https://rubyonrails.org/): As a default for ruby. Even though I am a huge fan of hanami/ hanami-API or simple racks applications, ignoring the obvious that Rails is the main development ruby framework would have being dumb.
+- [Traefik and portainer](https://doc.traefik.io/traefik/): Checked how to have a cool environment without ports and localhost (incongruencies between systems and externalizing)
 
 # Findings:
 
@@ -18,7 +18,7 @@ Coming with the premise of not being a huge fan of React.js (this test changed i
 
 After some days ->
 
-- Zustand is a gamechanger. Default Redux as state management failed for me in the premise of by default overcomplicating state management (huge number of layers), lack of scalability in big projects and sadly react-community adapting it as a requirement for every project without thinking the why of it. Easy, direct, and on-demand without disturbing is a win-win. Probably because it remembers me a lot of how Vuex stores are made.
+- Zustand.js: gamechanger. Default Redux as state management failed for me in the premise of by default overcomplicating state management (huge number of layers), lack of scalability in big projects and sadly react-community adapting it as a requirement for every project without thinking the why of it. Easy, direct, and on-demand without disturbing is a win-win. Probably because it remembers me a lot of how Vuex stores are made.
 
 - React-query: adds the default handling of external requests. Any big/long-term project would end implementing this internally, but is cool that there is already a foundation and general service for that and works easy. Really liked the invalidated cache part and automatic prefetch/retries. Need to dig better with how it plays with GraphQL.
 
