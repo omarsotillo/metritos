@@ -77,6 +77,7 @@ What it needs to be considered a well-set project and what I would find ideal:
 - [ ] FE on docker and traefik communication through host and not port
 - [ ] Traefik backend ports
 - [ ] Multistage images docker ruby
+- [ ] Dip
 
 #### Frontend (Hive)
 
