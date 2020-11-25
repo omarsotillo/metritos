@@ -18,6 +18,7 @@ gem 'sentry-raven', '~> 3.0'
 gem 'tzinfo-data', '~> 1.2', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
+  gem "test-prof"
   gem 'byebug', '~> 11.1', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.0'
   gem 'faker', '~> 2.12'
@@ -32,6 +33,7 @@ end
 group :development do
   gem 'activerecord-import'
   gem 'annotate', '~> 3.1'
+  gem 'bullet'
   gem 'brakeman', '~> 4.10'
   gem 'bundler-audit', '~> 0.7.0'
   gem 'bundler-leak', '~> 0.2'
