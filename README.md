@@ -48,7 +48,7 @@ Directly after:
 
 `make run app="development" command="rails c "`
 
-### Frontend (Hive)
+### Frontend (Frontend)
 
 Requires backend to be running
 
@@ -74,12 +74,12 @@ What it needs to be considered a well-set project and what I would find ideal:
 
 #### Docker
 
-- [ ] FE on docker and traefik communication through host and not port
-- [ ] Traefik backend ports
-- [ ] Multistage images docker ruby
-- [ ] Dip
+- [x] Traefik backend ports
+- [x] Multistage images docker ruby
+- [x] Dip
+- [ ] Github actions
 
-#### Frontend (Hive)
+#### Frontend
 
 - [ ] Mobile UI
 - [ ] Concesus typescript + improvement in components (some pure functions without type other FunctionComponent)

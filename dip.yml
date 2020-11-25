@@ -1,0 +1,38 @@
+# Required minimum dip version
+version: '4.1'
+
+environment:
+  COMPOSE_EXT: development
+
+compose:
+  files:
+    - docker/configurations/docker-compose.yml
+    - docker/configurations/storage.docker-compose.yml
+    - docker/configurations/external-services.docker-compose.yml
+    - docker/configurations/backend.docker-compose.yml
+  project_name: metritos
+
+interaction:
+  bash:
+    description: Open the Bash shell in app's container
+    service: development
+    command: bash
+    compose:
+      run_options: [no-deps]
+
+  bundle:
+    description: Run Bundler commands
+    service: development
+    command: bundle
+
+  rake:
+    description: Run Rake commands
+    service: development
+    command: bundle exec rake
+
+  rspec:
+    description: Run Rspec commands
+    service: development
+    environment:
+      RAILS_ENV: test
+    command: bundle exec rspec

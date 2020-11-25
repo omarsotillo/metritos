@@ -25,8 +25,8 @@ export const Calendar: FunctionComponent<CalendarProps> = ({ id }) => {
   return (
     <ResponsiveCalendar
       data={data}
-      from={data[10].day || "2019-01-01"}
-      to={data[0].day}
+      from={data[10]?.day || "2019-01-01"}
+      to={data[0]?.day || "2020-01-01"}
       emptyColor="#eeeeee"
       colors={["#dee2e6", "#adb5bd", "#6c757d", "#212529"]}
       margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
